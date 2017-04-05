@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script>
+var d="140";
+var save_file_url;  //.Save_url안에 url
+var now_file_url;   //.file안에 url
+var my_url;         //내가 설정할 url
+$(document).ready(function(){
+    $("#save").click(function (){
+        alert("save");
+       /*
+        .file안에 있는 파일을 .Save_url안에
+        경로로 이동한다.
+
+        now_file_url에 있는 파일을 now_file_url로 저장
+        */
+    });
+
+    $("#clear").click(function (){
+        alert("clear");
+        /*
+        .file 안에 있는 값을 삭제한다.
+        now_file_url="";
+        */
+    });
+
+    $(".file").click(function (){
+        alert("file");
+        /*
+        파일을 찾아서 파일의 경로를 now_file_url로 저장한다.
+        */
+    });
+
+    $("#plus_my_url").click(function (){
+        alert("plus_my_url");
+        /*
+        새로 지정할 파일 경로를 찾고 my_url에 저장한 후 
+        그 값을 panel2하단에 저장한다.
+        */
+    });
+
+	$(".flip").click(function(){
+        $(".panel").slideToggle("slow");
+    });
+
+    $(".flip2").click(function(){
+        $(".panel2").slideToggle("slow");
+    });
+     
+
+    $("p").click(function(){
+        //클릭 시 save_url로 지정
+        alert("select index : "+$(this).index("p") );
+        //이걸 이용해서 모든 p값을 db나 배열에 지정하고 
+        //index로 찾는 형식으로 제작?
+        $(".Save_url").text(d);
+    });
+});
+   
+</script>
+
+<style>
+.nut{
+    width:80%;
+    margin: 0 auto;
+    border-style: solid;
+    padding: 10px 30px 180px 30px;
+    border-bottom:none;
+}
+.ADB{
+    width:80%;
+    margin: 0 auto;
+    border-style: solid;
+    padding: 30px 30px 250px 30px;
+}
+.panel, .flip {
+    padding: 5px;
+    width:300px;
+    text-align: center;
+    background-color: #FFFFFF;
+    border: solid 2px #000000;
+    float:left;
+}
+
+.panel2, .flip2 {
+    padding: 5px;
+    width:300px;
+    text-align: center;
+    background-color: #FFFFFF;
+    border: solid 2px #000000;
+    float: right;
+}
+
+.file{
+	height: 300px;
+	float:center;
+	text-align: center;
+	background-color: #FFFFFF;
+    border: solid 2px #000000;
+    vertical-align: middle;
+}
+.file img{
+     height: auto;
+}
+
+
+.Le{
+	float: left;
+	
+	text-align: center;
+}
+
+.Ri{
+	float: right;
+	
+	text-align: center;
+ 
+}
+.Save_url{
+    padding: 5px;
+    width:300px;
+    text-align: center;
+    background-color: #FFFFFF;
+    border: solid 2px #000000;
+    float: right;
+}
+
+</style>
+</head>
+
+<body>
+<div class="nut">
+    
+        <div class="Le">
+            <img width="263" height="180" align="middle" src="LogoFactory.jpg">
+        </div>
+        <div class="Ri" id="plus_my_url">
+            <img width="150" height="150" align="middle" src="url_plus.png">
+        </div>
+</div>
+<div class="ADB">
+
+
+    <div class="flip">my url</div>
+    <div class="Save_url">dddd</div>
+    <br><br>
+
+    <div class="panel">
+    	<p class="url_my">Hello world!</p>
+    	<p class="url_my">hi world!</p>
+        <p class="url_my">he world!</p>
+        <p class="url_my">ha world!</p>
+    </div>
+    <br><br>
+
+    <div class="flip2">my paseg</div>
+    <br><br>
+    <div class="panel2">
+        <p class="my_url">my paseg</p>
+        <p class="my_url">uo paseg</p>
+        <p class="my_url">yo paseg</p>
+        <p class="my_url">qw paseg</p>
+    </div>
+    <br><br>
+
+    <br><br><br><br><br><br><br><br><br><br><br><br>
+
+    <div class="file">
+        <img width="220" height="220" align="middle" src="file_plus.png">
+    </div>
+    <br>
+
+    <div class="Le" id="clear">
+        <img width="220" height="220" align="middle" src="clear.png">
+    </div>
+    <div class="Ri" id="save">
+        <img width="220" height="220" align="middle" src="save.png">
+    </div>
+</div>
+</body>
+</html>
